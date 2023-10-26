@@ -128,25 +128,25 @@
 
         switch (type) {
             case 1:
-                searchQuery += ' intitle:index.of';
+                searchQuery += ' intitle:"index of" "config.db" "*key.pem" ext:sql|xls|xml|json|csv';
                 break;
             case 2:
                 searchQuery += ' ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini';
                 break;
             case 3:
-                searchQuery += ' ext:sql | ext:dbf | ext:mdb';
+                searchQuery += ' intext:admin inurl:admin ext:sql | ext:dbf | ext:mdb';
                 break;
             case 4:
-                searchQuery += ' ext:log';
+                searchQuery += ' inurl:q= | inurl:s= | inurl:search= | inurl:query= | inurl:keyword= | inurl:lang= inurl:&';
                 break;
             case 5:
-                searchQuery += ' ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup';
+                searchQuery += ' ext:bkf | ext:bkp | ext:bak | ext:old | ext:backup | ext:log | ext:txt | ext:conf | ext:cnf | ext:ini | ext:env | ext:sh | ext:bak | ext:backup | ext:swp | ext:old | ext:~ | ext:git | ext:svn | ext:htpasswd | ext:htaccess';
                 break;
             case 6:
-                searchQuery += ' inurl:login';
+                searchQuery += ' inurl:login | inurl:signin | intitle:Login | intitle:"sign in" | inurl:auth';
                 break;
             case 7:
-                searchQuery += ' intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"';
+                searchQuery += ' inurl:config | inurl:env | inurl:setting | inurl:backup | inurl:admin | ';
                 break;
             case 8:
                 searchQuery += ' ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv';
@@ -158,7 +158,7 @@
                 searchQuery += ' inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download';
                 break;
             case 11:
-                searchQuery += ' inurl:shell | inurl:backdoor | inurl:wso | inurl:cmd | shadow | passwd | boot.ini | inurl:backdoor';
+                searchQuery += ' inurl:admin | administrator | adm | login | l0gin | wp-login | intitle:"login"| intitle:"index of / admin" | inurl:admin intitle:admin intext:admin';
                 break;
             case 12:
                 searchQuery += ' inurl:readme | inurl:license | inurl:install | inurl:setup | inurl:config';
@@ -167,13 +167,11 @@
                 searchQuery += ' inurl:redir | inurl:url | inurl:redirect | inurl:return | inurl:src=http | inurl:r=http';
                 break;
             case 14:
-                searchQuery += ' ext:action | ext:struts | ext:do';
+                searchQuery += ' "MYSQL_ROOT_PASSWORD:" ext:env OR ext:yml -git ext:sql inurl:admin';
                 break;
             case 15:
-                var site = 'site:pastebin.com ' + targetDomain;
-                var url = 'https://www.google.com/search?q=' + encodeURIComponent(site);
-                window.open(url, '_blank');
-                return;
+                searchQuery += ' site:*.*.29.* |site:*.*.28.* |site:*.*.27.* |site:*.*.26.* |site:*.*.25.* |site:*.*.24.* |site:*.*.23.* |site:*.*.22.* |site:*.*.21.* |site:*.*.20.* |site:*.*.19.* |site:*.*.18.* |site:*.*.17.* |site:*.*.16.* |site:*.*.15.*';
+                break;
             case 16:
                 var site = 'site:linkedin.com employees ' + targetDomain;
                 var url = 'https://www.google.com/search?q=' + encodeURIComponent(site);
@@ -205,33 +203,23 @@
                 window.open(url, '_blank');
                 return;
             case 22:
-                var url = 'http://' + targetDomain + '/crossdomain.xml';
-                window.open(url, '_blank');
-                return;
+                searchQuery += ' intext:"PAGE NOT FOUND" | intext:"project not found" | intext:"Repository not found" | intext:"domain does not exist" | intext:"This page could not be found" | intext:"404 Blog is not found" | intext:"No settings were found for this company" | intext:"domain name is invalid"';
+                break;
             case 23:
-                var url = 'http://threatcrowd.org/domain.php?domain=' + targetDomain;
-                window.open(url, '_blank');
-                return;
+                searchQuery += ' inurl: not for distribution | confidential | “employee only” | proprietary | top secret | classified | trade secret | internal | private filetype:xls | WS_FTP | ws_ftp | log | LOG filetype:log | private filetype:xls | private filetype:csv | private filetype:doc | private filetype:txt';
+                break;
             case 24:
-                var site = '+inurl:' + targetDomain + ' +ext:swf';
-                var url = 'https://www.google.com/search?q=' + encodeURIComponent(site);
-                window.open(url, '_blank');
-                return;
+                searchQuery += ' inurl:.gov not for distribution | confidential | “employee only” | proprietary | top secret | classified | trade secret | internal | private filetype:xls | WS_FTP | ws_ftp | log | LOG filetype:log | private filetype:xls | private filetype:csv | private filetype:doc | private filetype:txt';
+                break;
             case 25:
-                var site = 'site:' + targetDomain + ' mime:swf';
-                var url = 'https://yandex.com/search/?text=' + encodeURIComponent(site);
-                window.open(url, '_blank');
-                return;
+                searchQuery += ' inurl:php intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"';
+                break;
             case 26:
-                var site = targetDomain;
-                var url = 'https://web.archive.org/cdx/search?url=' + encodeURIComponent(site) + '/&matchType=domain&collapse=urlkey&output=text&fl=original&filter=urlkey:.*swf&limit=100000&_=1507209148310';
-                window.open(url, '_blank');
-                return;
+                searchQuery += 'allintext:"API_SECRET*" ext:env | ext:yml';
+                break;
             case 27:
-                var site = targetDomain;
-                var url = 'https://web.archive.org/cdx/search?url=' + encodeURIComponent(site) + '/&matchType=domain&collapse=urlkey&output=text&fl=original&filter=mimetype:application/x-shockwave-flash&limit=100000&_=1507209148310';
-                window.open(url, '_blank');
-                return;
+                searchQuery += ' "-----BEGIN RSA PRIVATE KEY-----" - inurl:id_rsa';
+                break;
             case 28:
                 var site = '.' + targetDomain;
                 var url = 'https://web.archive.org/web/*/(.' + encodeURIComponent(site) + ')';
@@ -357,11 +345,7 @@
                 break
             case 64 :
                 searchQuery += ' "sql" "parent" intitle:index.of -injection'
-                break
-            case a :
-                searchQuery += 'ext:doc | ext:docx | ext:odt | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv'
-                break
-            
+                break            
             default:
                 alert('Invalid option.');
                 return;
@@ -382,36 +366,36 @@
     <h1 style="text-align: center; color: #ffffff; margin-top: 50px;">Search Engine For Hackers</h1>
     <h2 style="display: flex center;  color: #ffffff; margin-top: 20px;" for="target" >[+] Enter Target Domain:</h2>
     <input type="text; margin-top: 20px;" id="target">
-    <h2>Developed by Rajiv Sharma0x13</h2>
+    <h2>Developed by <a href="https://cyberoxian.github.io/portfolio/" style="color: #fff;" target="_blank"> Rajiv Sharma</a></h2>
     <br>
     <div class="button-grid">
-    <button class="futuristic-button" onclick="googleSearch(1)">Directory listing vulnerabilities</button>
-    <button class="futuristic-button" onclick="googleSearch(2)">Exposed Configuration files</button>
-    <button class="futuristic-button" onclick="googleSearch(3)">Exposed Database files</button>
-    <button class="futuristic-button" onclick="googleSearch(4)">Exposed log files</button>
-    <button class="futuristic-button" onclick="googleSearch(5)">Backup and old files</button>
-    <button class="futuristic-button" onclick="googleSearch(6)">Login pages</button>
-    <button class="futuristic-button" onclick="googleSearch(7)">SQL errors</button>
-    <button class="futuristic-button" onclick="googleSearch(8)">Publicly exposed documents</button>
+    <button class="futuristic-button" onclick="googleSearch(1)">Index of</button>
+    <button class="futuristic-button" onclick="googleSearch(2)">Publicaly Exposed files</button>
+    <button class="futuristic-button" onclick="googleSearch(3)">Exposed Admin Database files</button>
+    <button class="futuristic-button" onclick="googleSearch(4)">XSS Parameter</button>
+    <button class="futuristic-button" onclick="googleSearch(5)">Juicy Extension</button>
+    <button class="futuristic-button" onclick="googleSearch(6)">Login page of Admin</button>
+    <button class="futuristic-button" onclick="googleSearch(7)">Juicy Endpoints</button>
+    <button class="futuristic-button" onclick="googleSearch(8)">Publicly Exposed documents</button>
     <button class="futuristic-button" onclick="googleSearch(9)">phpinfo()</button>
     <button class="futuristic-button" onclick="googleSearch(10)">Find WordPress</button>
-    <button class="futuristic-button" onclick="googleSearch(11)">Finding Backdoors</button>
+    <button class="futuristic-button" onclick="googleSearch(11)">Admin Panels</button>
     <button class="futuristic-button" onclick="googleSearch(12)">Install / Setup files</button>
     <button class="futuristic-button" onclick="googleSearch(13)">Open Redirects</button>
-    <button class="futuristic-button" onclick="googleSearch(14)">Apache STRUTS RCE</button>
-    <button class="futuristic-button" onclick="googleSearch(15)">Find Pastebin entries</button>
+    <button class="futuristic-button" onclick="googleSearch(14)">MySQL</button>
+    <button class="futuristic-button" onclick="googleSearch(15)">Find IP Address</button>
     <button class="futuristic-button" onclick="googleSearch(16)">Employees on LINKEDIN</button>
     <button class="futuristic-button" onclick="googleSearch(17)">.htaccess sensitive files</button>
     <button class="futuristic-button" onclick="googleSearch(18)">Find Subdomains</button>
     <button class="futuristic-button" onclick="googleSearch(19)">Find Sub-Subdomains</button>
     <button class="futuristic-button" onclick="googleSearch(20)">Find WordPress #2</button>
     <button class="futuristic-button" onclick="googleSearch(21)">Search in GITHUB</button>
-    <button class="futuristic-button" onclick="googleSearch(22)">Test CrossDomain</button>
-    <button class="futuristic-button" onclick="googleSearch(23)">Check in ThreatCrowd</button>
-    <button class="futuristic-button" onclick="googleSearch(24)">Find SWF</button>
-    <button class="futuristic-button" onclick="googleSearch(25)">Find MIME-SWF</button>
-    <button class="futuristic-button" onclick="googleSearch(26)">Find SWF links in the past</button>
-    <button class="futuristic-button" onclick="googleSearch(27)">Find MIME-SWF links in the past</button>
+    <button class="futuristic-button" onclick="googleSearch(22)">Advance Search</button>
+    <button class="futuristic-button" onclick="googleSearch(23)">Confidential Files #1</button>
+    <button class="futuristic-button" onclick="googleSearch(24)">Confidential Files #2</button>
+    <button class="futuristic-button" onclick="googleSearch(25)">SQL errors</button>
+    <button class="futuristic-button" onclick="googleSearch(26)">API</button>
+    <button class="futuristic-button" onclick="googleSearch(27)">RSA Private Key</button>
     <button class="futuristic-button" onclick="googleSearch(28)">Search in Web Archive #1</button>
     <button class="futuristic-button" onclick="googleSearch(29)">Search in Web Archive #2</button>
     <button class="futuristic-button" onclick="googleSearch(30)">Certificate Transparency</button>
