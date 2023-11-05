@@ -134,7 +134,7 @@
                 searchQuery += ' ext:xml | ext:conf | ext:cnf | ext:reg | ext:inf | ext:rdp | ext:cfg | ext:txt | ext:ora | ext:ini';
                 break;
             case 3:
-                searchQuery += ' intext:admin inurl:admin ext:sql | ext:dbf | ext:mdb';
+                searchQuery += ' intext:admin inurl:admin ext:sql | ext:dbf | ext:mdb | ext:aspx ' ;
                 break;
             case 4:
                 searchQuery += ' inurl:q= | inurl:s= | inurl:search= | inurl:query= | inurl:keyword= | inurl:lang= inurl:&';
@@ -278,7 +278,7 @@
                 searchQuery += ' intitle:"index of "main.yml"';
                 break;
             case 42:
-                searchQuery += ' inurl:/admin.aspx'
+                searchQuery += 'site:pastebin.com intext:"*@*.com:*"'
                 break
             case 43:
                 searchQuery += ' inurl:/wp-content/uploads/wpo_wcpdf'
@@ -410,7 +410,7 @@
     <button class="futuristic-button" onclick="googleSearch(39)">ArcGIS REST Services Directory</button>
     <button class="futuristic-button" onclick="googleSearch(40)">wp-content Juicy Info</button>
     <button class="futuristic-button" onclick="googleSearch(41)">main.yml file</button>
-    <button class="futuristic-button" onclick="googleSearch(42)">Admin Portal</button>
+    <button class="futuristic-button" onclick="googleSearch(42)">Pastebin Breach</button>
     <button class="futuristic-button" onclick="googleSearch(43)">Wordpress Juicy file 1</button>
     <button class="futuristic-button" onclick="googleSearch(44)">File Upload</button>
     <button class="futuristic-button" onclick="googleSearch(45)">Vulnerable Wordpress Plugin</button>
