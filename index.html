@@ -4,7 +4,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #070101;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -59,15 +58,7 @@
             }
         }
     
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
+
     
     
         h1 {
@@ -112,6 +103,7 @@
             width: 150px;
             height: 150px;
         }
+        
     </style>
 
 <script>
@@ -215,7 +207,7 @@
                 searchQuery += ' inurl:php intext:"sql syntax near" | intext:"syntax error has occurred" | intext:"incorrect syntax near" | intext:"unexpected end of SQL command" | intext:"Warning: mysql_connect()" | intext:"Warning: mysql_query()" | intext:"Warning: pg_connect()"';
                 break;
             case 26:
-                searchQuery += 'allintext:"API_SECRET*" ext:env | ext:yml';
+                searchQuery += ' allintext:"API_SECRET*" ext:env | ext:yml';
                 break;
             case 27:
                 searchQuery += ' "-----BEGIN RSA PRIVATE KEY-----" - inurl:id_rsa';
@@ -278,7 +270,7 @@
                 searchQuery += ' intitle:"index of "main.yml"';
                 break;
             case 42:
-                searchQuery += 'site:pastebin.com intext:"*@*.com:*"'
+                searchQuery += ' site:pastebin.com intext:"*@*.com:*"'
                 break
             case 43:
                 searchQuery += ' inurl:/wp-content/uploads/wpo_wcpdf'
@@ -355,16 +347,12 @@
         window.open(url, '_blank');
     }
     </script>
+    
 </head>
-<body>
-    <div class="background-video">
-        <video autoplay loop muted class="background-video">
-            <source src="/source/Network.mp4" type="video/mp4">
-            <!-- Add additional source tags for other video formats if needed -->
-        </video>
-    </div>
+<body background="/source/backround.jpg">
+    
     <h1 style="text-align: center; color: #ffffff; margin-top: 50px;">Search Engine For Hackers</h1>
-    <h2 style="display: flex center;  color: #ffffff; margin-top: 20px;" for="target" >[+] Enter Target Domain:</h2>
+    <h2 style="display: flex center;  color: #ffffff; margin-top: 20px;" for="target" >[+] Enter Target Domain</h2>
     <input type="text; margin-top: 20px;" id="target">
     <h2>Developed by <a href="https://cyberoxian.github.io/portfolio/" style="color: #fff;" target="_blank"> Rajiv Sharma</a></h2>
     <br>
@@ -435,6 +423,5 @@
     <button class="futuristic-button" onclick="googleSearch(64)">Directories containing SQL Installs and/or SQL databases</button>
 </div>
     <br>
-
 </body>
 </html>
