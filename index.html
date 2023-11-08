@@ -144,7 +144,7 @@
                 searchQuery += ' ext:doc | ext:docx | ext:odt | ext:pdf | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv';
                 break;
             case 9:
-                searchQuery += ' ext:php intitle:phpinfo "published by the PHP Group"';
+                searchQuery += ' inurl:signup | inurl:register | intitle:Signup';
                 break;
             case 10:
                 searchQuery += ' inurl:wp- | inurl:wp-content | inurl:plugins | inurl:uploads | inurl:themes | inurl:download';
@@ -190,10 +190,8 @@
                 window.open(url, '_blank');
                 return;
             case 21:
-                var site = '"*.' + targetDomain + '"';
-                var url = 'https://github.com/search?q=' + encodeURIComponent(site) + '&type=host';
-                window.open(url, '_blank');
-                return;
+                searchQuery += 'site:github.com | site:gitlab.com'
+                break;
             case 22:
                 searchQuery += ' intext:"PAGE NOT FOUND" | intext:"project not found" | intext:"Repository not found" | intext:"domain does not exist" | intext:"This page could not be found" | intext:"404 Blog is not found" | intext:"No settings were found for this company" | intext:"domain name is invalid"';
                 break;
@@ -258,7 +256,7 @@
                 window.open(url, '_blank');
                 return;
             case 38:
-                searchQuery += ' inurl:"/geoserver/ows?service=wfs"';
+                searchQuery += ' site:stackoverflow.com"';
                 break;
             case 39:
                 searchQuery += ' intext:"ArcGIS REST Services Directory" intitle:"Folder: /"';
@@ -270,7 +268,7 @@
                 searchQuery += ' intitle:"index of "main.yml"';
                 break;
             case 42:
-                searchQuery += ' site:pastebin.com intext:"*@*.com:*"'
+                searchQuery += ' site:pastebin.com | site:paste2.org | site:pastehtml.com | site:slexy.org | site:snipplr.com | site:snipt.net | site:textsnip.com | site:bitpaste.app | site:justpaste.it | site:heypasteit.com | site:hastebin.com | site:dpaste.org | site:dpaste.com | site:codepad.org | site:jsitor.com | site:codepen.io | site:jsfiddle.net | site:dotnetfiddle.net | site:phpfiddle.org | site:ide.geeksforgeeks.org | site:repl.it | site:ideone.com | site:paste.debian.net | site:paste.org | site:paste.org.ru | site:codebeautify.org  | site:codeshare.io | site:trello.com'
                 break
             case 43:
                 searchQuery += ' inurl:/wp-content/uploads/wpo_wcpdf'
@@ -365,7 +363,7 @@
     <button class="futuristic-button" onclick="googleSearch(6)">Login page of Admin</button>
     <button class="futuristic-button" onclick="googleSearch(7)">Juicy Endpoints</button>
     <button class="futuristic-button" onclick="googleSearch(8)">Publicly Exposed documents</button>
-    <button class="futuristic-button" onclick="googleSearch(9)">phpinfo()</button>
+    <button class="futuristic-button" onclick="googleSearch(9)">Login/Signup</button>
     <button class="futuristic-button" onclick="googleSearch(10)">Find WordPress</button>
     <button class="futuristic-button" onclick="googleSearch(11)">Admin Panels</button>
     <button class="futuristic-button" onclick="googleSearch(12)">Install / Setup files</button>
@@ -377,7 +375,7 @@
     <button class="futuristic-button" onclick="googleSearch(18)">Find Subdomains</button>
     <button class="futuristic-button" onclick="googleSearch(19)">Find Sub-Subdomains</button>
     <button class="futuristic-button" onclick="googleSearch(20)">Find WordPress #2</button>
-    <button class="futuristic-button" onclick="googleSearch(21)">Search in GITHUB</button>
+    <button class="futuristic-button" onclick="googleSearch(21)">Search in GITHUB & GITLAB</button>
     <button class="futuristic-button" onclick="googleSearch(22)">Advance Search</button>
     <button class="futuristic-button" onclick="googleSearch(23)">Confidential Files #1</button>
     <button class="futuristic-button" onclick="googleSearch(24)">Confidential Files #2</button>
@@ -394,7 +392,7 @@
     <button class="futuristic-button" onclick="googleSearch(35)">Search in Censys (Domain)</button>
     <button class="futuristic-button" onclick="googleSearch(36)">Search in Censys (Certificates)</button>
     <button class="futuristic-button" onclick="googleSearch(37)">Search in SHODAN</button>
-    <button class="futuristic-button" onclick="googleSearch(38)">Vulnerable Servers</button>
+    <button class="futuristic-button" onclick="googleSearch(38)">Search in stackoverflow</button>
     <button class="futuristic-button" onclick="googleSearch(39)">ArcGIS REST Services Directory</button>
     <button class="futuristic-button" onclick="googleSearch(40)">wp-content Juicy Info</button>
     <button class="futuristic-button" onclick="googleSearch(41)">main.yml file</button>
